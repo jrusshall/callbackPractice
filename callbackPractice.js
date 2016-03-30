@@ -1,16 +1,16 @@
 /* In this repo your job is to write functions to make each function call work properly.
-Below is a sample problem 
+Below is a sample problem
 
   //code here for sayHi
 
    sayHi('Hi Katie', function(thingToSay){
       alert(thingToSay);
    });
-   
 
-and what you should write is the sayHi function that makes the code above work, 
-    
-    
+
+and what you should write is the sayHi function that makes the code above work,
+
+
    var sayHi = function(str, cb){
     cb(str);
    }
@@ -18,29 +18,33 @@ and what you should write is the sayHi function that makes the code above work,
    sayHi('Hi Katie', function(thingToSay){
       alert(thingToSay); //should alert ('Hi Katie')'
    });
-    
-    
+
+
 */
 
 
 
-  //Code Here for first
-  
+var first = function(names, firstName) {
+  firstName(names[0]);
+}
+
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
   console.log('The first name in names is ' + firstName)
 });
-
+//returns: "The first name in names is Tyler"
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
 
+var last = function(names, lastName) {
+  lastName(names[names.length - 1]);
+}
 
-  //Code Here for last
-
+var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
 });
@@ -56,7 +60,9 @@ last(names, function(lastName){
 
 
 
-  //Code Here for multiply
+var multiply = function(num1, num2, newNum) {
+  newNum(num1 * num2);
+}
 
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -70,10 +76,9 @@ multiply(4, 3, function(answer){
 
 
 
+//code here
 
-
-  //Code Here for contains
-
+var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 contains(names, 'Colt', function(result){
   if(result === true){
     console.log('Colt is in the array');
@@ -146,5 +151,5 @@ var users = [
 ];
 
 getUserById(users, '16t', function(user){
-  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address); 
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address);
 });
